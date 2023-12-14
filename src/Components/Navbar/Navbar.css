@@ -52,16 +52,3 @@
     background-color: #1f1f1f;
     color: white;
 }
-.nav-cart-count{
-    width: 22px;
-    height: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -35px;
-    margin-left: -55px;
-    border-radius: 11px;
-    font-size: 14px;
-    background-color: red;
-    color: white;
-}

@@ -17,3 +17,13 @@
     font-weight: 600;
     margin-left: 80px;
 }
+.but{
+    width: 55px;
+    height: 25px;
+    background-color: red;
+    border: none;
+    color: black;
+    font-family: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}

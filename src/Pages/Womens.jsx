@@ -1,76 +1,18 @@
 import React from "react";
 import "./Womens.css";
 import products from "../data/WomenData.js";
+import { CartUser } from "../Context/CartContext";
+import Cart from "./Cart";
+
 const Womens = () => {
+  const { addToCart } = CartUser();
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
+
   return (
     <div className="womens">
-      {/* <div className="women-one">
-        <img src={product_1} alt="" />
-        <p>Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse</p>
-        <p>
-          $85.0 <span>$120.5</span>
-        </p>
-        <button>Add To Cart</button>
-      </div>
-      <div className="women-one">
-        <img src={product_3} alt="" />
-        <p>Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse</p>
-        <p>
-          $85.0 <span>$120.5</span>
-        </p>
-        <button>Add To Cart</button>
-      </div>
-      <div className="women-one">
-        <img src={product_4} alt="" />
-        <p>Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse</p>
-        <p>
-          $85.0 <span>$120.5</span>
-        </p>
-        <button>Add To Cart</button>
-      </div>
-      <div className="women-one">
-        <img src={product_5} alt="" />
-        <p>
-          Men Green Solid Zippered Full-Zip Slim Fit Bomber <br />
-          Jacket
-        </p>
-        <p>
-          $85.0 <span>$120.5</span>
-        </p>
-        <button>Add To Cart</button>
-      </div>
-      <div className="women-one">
-        <img src={product_9} alt="" />
-        <p>Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse</p>
-        <p>
-          $85.0 <span>$120.5</span>
-        </p>
-        <button>Add To Cart</button>
-      </div>
-      <div className="women-one">
-        <img src={product_10} alt="" />
-        <p>Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse</p>
-        <p>
-          $85.0 <span>$120.5</span>
-        </p>
-        <button>Add To Cart</button>
-      </div>
-      <div className="women-one">
-        <img src={product_11} alt="" />
-        <p>Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse</p>
-        <p>
-          $85.0 <span>$120.5</span>
-        </p>
-        <button>Add To Cart</button>
-      </div>
-      <div className="women-one">
-        <img src={product_12} alt="" />
-        <p>Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse</p>
-        <p>
-          $85.0 <span>$120.5</span>
-        </p>
-        <button>Add To Cart</button>
-      </div> */}
       {products.map((product) => (
         <div className="women-one" key={product.id}>
           <img src={product.image} alt="" />
@@ -78,7 +20,7 @@ const Womens = () => {
           <p>
             ${product.price} <span>${product.discountPrice}</span>
           </p>
-          <button>Add To Cart</button>
+          <button onClick={() => handleAddToCart(product)}>Add To Cart</button>
         </div>
       ))}
     </div>
